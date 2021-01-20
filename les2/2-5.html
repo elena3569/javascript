@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /**
+         * Находит сумму чисел a и b 
+         * 
+         * @param {number} a 
+         * @param {number} b
+         * 
+         * @returns a + b
+         */
+         function sum(a, b){
+            return (a + b);
+        }
+
+         /**
+         * Находит разность чисел a и b  
+         * @param {number} a 
+         * @param {number} b
+         * @returns a - b
+         */
+        function subtraction(a, b){
+            return (a - b);
+        }
+
+        /**
+         * Находит произведение чисел a и b  
+         * @param {number} a 
+         * @param {number} b
+         * @returns a * b
+         */
+        function multiplication(a, b){
+            return (a * b);
+        }
+
+        /**
+         * Находит частное чисел a и b  
+         * @param {number} a 
+         * @param {number} b
+         * @returns {number}  a / b
+         */
+        function division(a, b){
+            return (parseInt(a * 100 / b)/100);
+        }
+
+        /**
+         * @param {number} arg1
+         * @param {number} arg2
+         * @param {string='-' | '+' | '*' | '/'} operation
+         * 
+         */
+        function mathOperation(arg1, arg2, operation){
+            let result=null;
+            switch(operation){
+                case '-':
+                    result = subtraction(arg1, arg2);
+                    break;
+                case '+':
+                    result = sum(arg1, arg2);
+                    break;
+                case '*':
+                    result = multiplication(arg1, arg2);
+                    break;
+                case '/':
+                    result = division(arg1, arg2);
+                    break;
+            }
+            return result;
+        }
+        
+        console.log(mathOperation(6, 9, '+'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function transformNumToObj(number){
+            let numObject = {};
+            if (Number.isInteger(number) && number >= 0 && number <= 999){
+                numObject.units = number % 10;
+                numObject.tens = Math.floor(number / 10) % 10;
+                numObject.hundreds =  Math.floor(number / 100);
+            }
+            else {
+                return [
+                    "Число было передано вне диапазона [0, 999], не целое число или вообще не число",                 numObject
+                ];
+            }
+            return numObject;
+        }
+
+        console.log(transformNumToObj(3));
+        console.log(transformNumToObj(36));
+        console.log(transformNumToObj(963));
+        console.log(transformNumToObj(1000));
+
+    </script>
+</body>
+</html>
